@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 from accounts.serializers import *
 from rest_framework.response import Response
-from sgpl_bash import settings
+from sgspl_base import settings
 import random
 
 

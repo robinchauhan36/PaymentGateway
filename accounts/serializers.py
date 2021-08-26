@@ -75,3 +75,9 @@ class OTPSerializer(serializers.ModelSerializer):
     class Meta:
         model = Otp
         fields = '__all__'
+
+
+class UserChatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')

@@ -1,5 +1,5 @@
 """
-WSGI config for sgpl_bash project.
+WSGI config for sgspl_base project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sgpl_bash.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sgspl_base.settings')
 
 application = get_wsgi_application()

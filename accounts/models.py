@@ -66,6 +66,20 @@ class Otp(ModelMixin):
     type = models.CharField(max_length=20, choices=OTP_TYPE, default='forgot', null=True, blank=True)
     verify = models.CharField(choices=OTP_VERIFY, default='false', max_length=100)
 
-# @receiver(pre_save, sender=Profile)
-# def reicever(*args, **kwargs):
-#     print('signal dispatched')
+
+class Notification(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    messages = models.CharField(max_length=200, default='')
+
+    def __str__(self):
+        return self.user
+
+
+def notification_create(user, message):
+    # get user instanse
+    user = User.objects.get(pk=user.pk)
+
+    # create notification
+    notification = Notification(user=user, messages=message)
+    notification.save()
+    return True

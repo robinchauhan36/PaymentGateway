@@ -1,4 +1,4 @@
-"""sgpl_bash URL Configuration
+"""sgspl_base URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -17,8 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1/account/', include('accounts.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  path('admin/', admin.site.urls),
+                  path('', include(router.urls)),
+                  path('api/v1/account/', include('accounts.urls')),
+                  path('api/v1/chat/', include('chat_app.urls')),
+                  path('api/v1/payment/', include('payment_app.urls'))
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
