@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'channels',
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -127,6 +128,7 @@ REST_FRAMEWORK = {
     ]
 }
 
+CLIENT_ID = "987035331339-vdl2gv83btp3pgc2kc31q32a35iq7gfd.apps.googleusercontent.com"
 STRIPE_PUBLISH_KEY = 'pk_test_IUQKmcTUVMIdHsty0GNNm9Ap00TfDBP4L8'
 STRIPE_SECRET_KEY = 'sk_test_6GJHD7Ofhck6CY1lyk6V99nP00mpx6JJXg'
 

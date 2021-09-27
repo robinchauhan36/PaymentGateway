@@ -6,3 +6,5 @@ sqlparse==0.4.1
 django-admin-interface
 channels
 stripe
+--upgrade google-auth
+drf-yasg

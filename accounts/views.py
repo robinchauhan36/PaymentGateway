@@ -125,3 +125,5 @@ class PasswordResetView(APIView):
             return Response({'message': 'First Verify OTP then reset your password'},
                             status=status.HTTP_400_BAD_REQUEST)
         return Response({'message': 'There is no user register with this email.'}, status=status.HTTP_400_BAD_REQUEST)
+
+
