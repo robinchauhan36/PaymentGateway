@@ -1,4 +1,4 @@
-"""sgspl_base URL Configuration
+"""book_movie URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -26,9 +26,9 @@ router = DefaultRouter()
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="SGPL API",
+        title="Movie Booking",
         default_version='v1',
-        description="All APIs for curlyhead",
+        description="All APIs for caw studio assignment",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="contact@snippets.local"),
         license=openapi.License(name="Test License"),
@@ -39,11 +39,10 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
-    path('api/v1/account/', include('accounts.urls')),
-    path('api/v1/chat/', include('chat_app.urls')),
-    path('api/v1/payment/', include('payment_app.urls')),
-    path('sw/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('route/', include(router.urls)),
+    path('account/', include('accounts.urls')),
+    path('movie/', include('movie.urls')),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
 

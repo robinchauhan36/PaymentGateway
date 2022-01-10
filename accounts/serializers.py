@@ -1,5 +1,4 @@
 from rest_framework import serializers, exceptions
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from django.utils import timezone
@@ -57,9 +56,6 @@ class UserLoginSerializer(serializers.Serializer):
 class UserLoginReplySerializer(serializers.ModelSerializer):
     user = UserSerializer()
 
-    # connected_contacts_count = serializers.SerializerMethodField()
-    # deal_count = serializers.SerializerMethodField()
-
     class Meta:
         model = Token
         fields = ('key', 'user')
@@ -69,15 +65,3 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = '__all__'
-
-
-class OTPSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Otp
-        fields = '__all__'
-
-
-class UserChatSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'email')

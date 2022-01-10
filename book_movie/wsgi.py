@@ -1,5 +1,5 @@
 """
-WSGI config for sgspl_base project.
+WSGI config for book_movie project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sgspl_base.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'book_movie.settings')
 
 application = get_wsgi_application()

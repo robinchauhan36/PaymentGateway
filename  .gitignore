@@ -101,7 +101,6 @@ notepad
 .idea
 .idea/workspace.xml
 *.pyc
-iot_reminder/settings_local.py
 
 acgcc/whoosh_index
 react/*
@@ -131,10 +130,3 @@ yarn-error.log*
 *.sw?
 db.sqlite3
 
-spaces/webpack-stats.json
-/public/static/
-/acgcc/whoosh_index/
-/acgcc/xapian_index/
-/nextop/settings_local.py
-*.pkl
-*/__pycache__/*.pyc
